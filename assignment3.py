@@ -34,7 +34,7 @@ year_range = st.sidebar.slider("Select Year Range", int(df_cleaned['Year'].min()
 
 # Limit the value range to a maximum of 7000
 value_range = st.sidebar.slider("Select Value Range", int(df_cleaned['Value'].min()), 15000, 
-                                (int(df_cleaned['Value'].min()), min(10000, int(df_cleaned['Value'].max()))))
+                                (int(df_cleaned['Value'].min()), min(15000, int(df_cleaned['Value'].max()))))
 
 # Filter data based on the selected ranges
 filtered_data = df_cleaned[(df_cleaned['Year'].between(year_range[0], year_range[1])) & 
@@ -46,7 +46,7 @@ df_yearly_filtered = filtered_data[['Year', 'Value']].groupby('Year').mean().res
 # First visualization: Line chart (Value Trend Over the Years)
 st.subheader("Inflation Rate in Lebanon Over the Years")
 line_chart_yearly = px.line(df_yearly_filtered, x='Year', y='Value', title="Inflation Rate in Lebanon the Selected Years",
-                            range_y=[df_cleaned['Value'].min(), min(15000, df_cleaned['Value'].max())])
+                            range_y=[df_cleaned['Value'].min(), min(4000, df_cleaned['Value'].max())])
 st.plotly_chart(line_chart_yearly, use_container_width=True)
 # Description of the insights
 st.subheader("Insights of the Bar Chart")
