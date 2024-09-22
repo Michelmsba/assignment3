@@ -167,3 +167,4 @@ webencodings==0.5.1
 werkzeug==3.0.0
 xgboost==2.0.3
 zipp==3.16.2
+SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True
