@@ -15,7 +15,7 @@ st.write("""
 """)
 
 # Load and clean data
-df = pd.read_csv("C:/Users/abdal/Downloads/14b89103253820add272eacabd0604d6_20240909_192340.csv")
+df = pd.read_csv("14b89103253820add272eacabd0604d6_20240909_192340.csv")
 df_cleaned = df[df['EndDate'] != '#date+end']
 df_cleaned['EndDate'] = pd.to_datetime(df_cleaned['EndDate'], errors='coerce')
 df_cleaned = df_cleaned.dropna(subset=['EndDate'])
